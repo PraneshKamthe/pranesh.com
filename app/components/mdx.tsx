@@ -3,6 +3,7 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css';
 
 function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");

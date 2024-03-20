@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
+import { ArrowLeft, Github, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -11,9 +11,9 @@ type Props = {
 		repository?: string;
 	};
 
-	views: number;
+	views?: number;
 };
-export const Header: React.FC<Props> = ({ project, views }) => {
+export const Header: React.FC<Props> = ({ project }) => {
 	const ref = useRef<HTMLElement>(null);
 	const [isIntersecting, setIntersecting] = useState(true);
 
@@ -62,12 +62,21 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 									: "text-zinc-600 hover:text-zinc-900"
 							} `}
 						>
-							<Eye className="w-5 h-5" />{" "}
+							{/* <Eye className="w-5 h-5" />{" "}
 							{Intl.NumberFormat("en-US", { notation: "compact" }).format(
 								views,
-							)}
+							)} */}
 						</span>
-						<Link target="_blank" href="https://twitter.com/chronark_">
+						<Link target="_blank" href="https://linkedin.com/in/praneshkamthe">
+							<Linkedin
+								className={`w-6 h-6 duration-200 hover:font-medium ${
+									isIntersecting
+										? " text-zinc-400 hover:text-zinc-100"
+										: "text-zinc-600 hover:text-zinc-900"
+								} `}
+							/>
+						</Link>
+						<Link target="_blank" href="https://twitter.com/KamthePranesh">
 							<Twitter
 								className={`w-6 h-6 duration-200 hover:font-medium ${
 									isIntersecting
@@ -76,7 +85,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 								} `}
 							/>
 						</Link>
-						<Link target="_blank" href="https://github.com/chronark">
+						<Link target="_blank" href="https://github.com/PraneshKamthe">
 							<Github
 								className={`w-6 h-6 duration-200 hover:font-medium ${
 									isIntersecting
