@@ -8,15 +8,6 @@ module.exports = {
     "content/**/*.mdx",
   ],
 
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-    ],
-  },
-
   theme: {
     extend: {
       typography: {
@@ -116,6 +107,5 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("tailwindcss-debug-screens"),
-	new MiniCssExtractPlugin(),
   ],
 };
